@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author admin
  */
-public class Booking {
+public class Booking implements IEntity{
 
     private Long id;
     private User user;
@@ -32,10 +32,12 @@ public class Booking {
         this.fare = fare;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }

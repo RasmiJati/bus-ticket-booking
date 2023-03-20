@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author admin
  */
-public class Route {
+public class Route implements IEntity{
 
     private Long id;
     private String starting_point;
@@ -28,10 +28,12 @@ public class Route {
         this.price = price;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }

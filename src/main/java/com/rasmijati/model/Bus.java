@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author admin
  */
-public class Bus {
+public class Bus implements IEntity{
 
     private Long id;
     private String number;
@@ -25,10 +25,12 @@ public class Bus {
         this.seats = seats;
     }
 
+    @Override
     public Long getId() {
         return id;
     }
 
+    @Override
     public void setId(Long id) {
         this.id = id;
     }
