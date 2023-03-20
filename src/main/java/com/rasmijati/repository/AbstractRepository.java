@@ -15,6 +15,7 @@ import java.util.List;
  * @param <T>
  */
 public abstract class AbstractRepository<T extends IEntity> {
+
     private List<T> list;
 
     public AbstractRepository() {
@@ -38,7 +39,11 @@ public abstract class AbstractRepository<T extends IEntity> {
         return null;
     }
 
-    public void edit(T e){
-        
+    public void delete(T list) {
+        this.list.remove(list);
+    }
+
+    public void edit(T e) {
+
     }
 }
