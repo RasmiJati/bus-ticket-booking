@@ -6,6 +6,7 @@
 package com.rasmijati.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  *
@@ -75,6 +76,46 @@ public class Payment {
 
     public void setDue_amount(BigDecimal due_amount) {
         this.due_amount = due_amount;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        hash = 53 * hash + Objects.hashCode(this.booking);
+        hash = 53 * hash + Objects.hashCode(this.date);
+        hash = 53 * hash + Objects.hashCode(this.total_amount);
+        hash = 53 * hash + Objects.hashCode(this.paid_amount);
+        hash = 53 * hash + Objects.hashCode(this.due_amount);
+
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Payment)) {
+            return false;
+        }
+        final Payment other = (Payment) obj;
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.booking, other.booking)) {
+            return false;
+        }
+        if (!Objects.equals(this.total_amount, other.total_amount)) {
+            return false;
+        }
+        if (!Objects.equals(this.paid_amount, other.paid_amount)) {
+            return false;
+        }
+        return Objects.equals(this.due_amount, other.due_amount);
     }
 
     @Override

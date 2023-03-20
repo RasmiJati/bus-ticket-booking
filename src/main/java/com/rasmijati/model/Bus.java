@@ -5,6 +5,8 @@
  */
 package com.rasmijati.model;
 
+import java.util.Objects;
+
 /**
  *
  * @author admin
@@ -56,9 +58,39 @@ public class Bus {
     }
 
     @Override
-    public String toString() {
-        return "id=" + id + ", number=" + number + ", type=" + type + ", seats=" + seats ;
+    public int hashCode() {
+        int hash = 3;
+        hash = 53 * hash + Objects.hashCode(this.id);
+        hash = 53 * hash + Objects.hashCode(this.number);
+        hash = 53 * hash + Objects.hashCode(this.type);
+        hash = 53 * hash + Objects.hashCode(this.seats);
+        return hash;
     }
-    
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Bus)) {
+            return false;
+        }
+        final Bus other = (Bus) obj;
+        if (!Objects.equals(this.number, other.number)) {
+            return false;
+        }
+        if (!Objects.equals(this.type, other.type)) {
+            return false;
+        }
+        if (!Objects.equals(this.seats, other.seats)) {
+            return false;
+        }
+        return Objects.equals(this.id, other.id);
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", number=" + number + ", type=" + type + ", seats=" + seats;
+    }
+
 }

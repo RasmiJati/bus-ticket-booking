@@ -6,6 +6,7 @@
 package com.rasmijati.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  *
@@ -88,9 +89,51 @@ public class Booking {
     }
 
     @Override
-    public String toString() {
-        return "id=" + id + ", user=" + user + ", bus=" + bus + ", route=" + route + ", date=" + date + ", seats=" + seats + ", fare=" + fare ;
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.id);
+        hash = 47 * hash + Objects.hashCode(this.user);
+        hash = 47 * hash + Objects.hashCode(this.bus);
+        hash = 47 * hash + Objects.hashCode(this.route);
+        hash = 47 * hash + Objects.hashCode(this.date);
+        hash = 47 * hash + Objects.hashCode(this.seats);
+        hash = 47 * hash + Objects.hashCode(this.fare);
+        return hash;
     }
-    
-    
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Booking)) {
+            return false;
+        }
+        final Booking other = (Booking) obj;
+        if (!Objects.equals(this.date, other.date)) {
+            return false;
+        }
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.user, other.user)) {
+            return false;
+        }
+        if (!Objects.equals(this.bus, other.bus)) {
+            return false;
+        }
+        if (!Objects.equals(this.route, other.route)) {
+            return false;
+        }
+        if (!Objects.equals(this.seats, other.seats)) {
+            return false;
+        }
+        return Objects.equals(this.fare, other.fare);
+    }
+
+    @Override
+    public String toString() {
+        return "id=" + id + ", user=" + user + ", bus=" + bus + ", route=" + route + ", date=" + date + ", seats=" + seats + ", fare=" + fare;
+    }
+
 }

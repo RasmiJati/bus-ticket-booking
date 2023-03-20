@@ -6,6 +6,7 @@
 package com.rasmijati.model;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 /**
  *
@@ -68,8 +69,43 @@ public class Route {
     }
 
     @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + Objects.hashCode(this.id);
+        hash = 89 * hash + Objects.hashCode(this.starting_point);
+        hash = 89 * hash + Objects.hashCode(this.destination);
+        hash = 89 * hash + Objects.hashCode(this.distance);
+        hash = 89 * hash + Objects.hashCode(this.price);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof Route)) {
+            return false;
+        }
+        final Route other = (Route) obj;
+        if (!Objects.equals(this.starting_point, other.starting_point)) {
+            return false;
+        }
+        if (!Objects.equals(this.destination, other.destination)) {
+            return false;
+        }
+        if (!Objects.equals(this.distance, other.distance)) {
+            return false;
+        }
+        if (!Objects.equals(this.price, other.price)) {
+            return false;
+        }
+        return Objects.equals(this.id, other.id);
+    }
+
+    @Override
     public String toString() {
-        return "id=" + id + ", starting_point=" + starting_point + ", destination=" + destination + ", distance=" + distance + ", price=" + price ;
+        return "id=" + id + ", starting_point=" + starting_point + ", destination=" + destination + ", distance=" + distance + ", price=" + price;
     }
 
 }
