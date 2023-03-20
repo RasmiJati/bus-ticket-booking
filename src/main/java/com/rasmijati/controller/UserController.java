@@ -6,6 +6,7 @@
 package com.rasmijati.controller;
 
 import com.rasmijati.model.User;
+import com.rasmijati.repository.UserRepository;
 
 /**
  *
@@ -13,9 +14,13 @@ import com.rasmijati.model.User;
  */
 public class UserController {
 
+    private static UserRepository userRepository;
+
     public static void main(String[] args) {
         User u = new User(1L, "rasmi", "rasmi@gmail.com", "9841526378", "rasmi");
-        System.out.println("user : " + u.toString());
-        System.out.println("user : " + u);
+        userRepository.create(u);
+        System.out.println(userRepository.findAll());
+        System.out.println(userRepository.findById(2L));
+
     }
 }
