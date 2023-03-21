@@ -30,6 +30,9 @@ public class Payment implements IEntity{
         this.due_amount = due_amount;
     }
 
+    public Payment() {
+    }
+
     @Override
     public Long getId() {
         return id;

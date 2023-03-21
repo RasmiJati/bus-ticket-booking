@@ -11,18 +11,24 @@ import java.util.Objects;
  *
  * @author admin
  */
-public class Bus implements IEntity{
+public class Bus implements IEntity {
 
     private Long id;
     private String number;
     private String type;
     private String seats;
 
+    public Bus() {
+    }
+
     public Bus(Long id, String number, String type, String seats) {
         this.id = id;
         this.number = number;
         this.type = type;
         this.seats = seats;
+    }
+
+    public Bus(Long id) {
     }
 
     @Override

@@ -30,6 +30,9 @@ public class User implements IEntity{
 
     }
 
+    public User(Long id) {
+    }
+
     @Override
     public Long getId() {
         return id;

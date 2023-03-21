@@ -37,7 +37,7 @@ public class UserRepository extends AbstractRepository<User> {
             System.out.println(i + " Inserted successfull!!");
 
         } catch (SQLException e) {
-            System.out.println("Insertion for unit failed!!!");
+            System.out.println("Insertion failed!!!");
         }
     }
 

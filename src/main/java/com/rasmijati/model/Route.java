@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author admin
  */
-public class Route implements IEntity{
+public class Route implements IEntity {
 
     private Long id;
     private String starting_point;
@@ -26,6 +26,12 @@ public class Route implements IEntity{
         this.destination = destination;
         this.distance = distance;
         this.price = price;
+    }
+
+    public Route() {
+    }
+
+    public Route(Long id) {
     }
 
     @Override

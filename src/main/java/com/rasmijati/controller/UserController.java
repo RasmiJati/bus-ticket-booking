@@ -117,7 +117,7 @@ public class UserController {
 
         User u = new User(id, name, email, phone, password);
         userRepository.create(u);  // create method of UserRepository
-        userRepository.findAll().stream().forEach(x -> System.out.println(x)); //1st load the user list in stream and fetch one value at a time using for each
+        System.out.println("User Inserted Successfilly!!");
     }
 
     public static void list() {
