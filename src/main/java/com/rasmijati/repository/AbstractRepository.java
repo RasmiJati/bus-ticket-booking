@@ -6,6 +6,8 @@
 package com.rasmijati.repository;
 
 import com.rasmijati.model.IEntity;
+import java.sql.Connection;
+import java.sql.DriverManager;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +19,16 @@ import java.util.List;
 public abstract class AbstractRepository<T extends IEntity> {
 
     private List<T> list;
+    public Connection connectDB() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/busticketbooking", "root", "R@smi1234");
+            return con;
+        } catch (Exception e) {
+            System.out.println("Connection failed!!");
+        }
+        return null;
+    }
 
     public AbstractRepository() {
         this.list = new ArrayList<>();

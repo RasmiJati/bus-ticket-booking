@@ -26,6 +26,10 @@ public class User implements IEntity{
         this.password = password;
     }
 
+    public User() {
+
+    }
+
     @Override
     public Long getId() {
         return id;

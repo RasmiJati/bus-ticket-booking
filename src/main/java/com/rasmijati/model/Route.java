@@ -107,7 +107,7 @@ public class Route implements IEntity{
 
     @Override
     public String toString() {
-        return "id=" + id + ", starting_point=" + starting_point + ", destination=" + destination + ", distance=" + distance + ", price=" + price;
+        return "id=" + id + ", starting_point=" + starting_point + ", destination=" + destination + ", distance=" + distance + "km" + ", price=" + price;
     }
 
 }
